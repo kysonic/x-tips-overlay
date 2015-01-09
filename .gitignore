@@ -1,0 +1,6 @@
+*.iml
+
+## Directory-based Strom project format:
+.idea/
+## Node JS
+node_modules/
