@@ -1,0 +1,32 @@
+{
+  "name": "x-tips-overlay",
+  "version": "0.0.0",
+  "authors": [
+    "kysonic <soooyc@gmail.com>"
+  ],
+  "description": "Polymer tips and advise constructor.",
+  "main": "demo.html",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "Polymer",
+    "tips",
+    "x-tips-overlay"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./components",
+    "test",
+    "tests",
+    "gulpfile.js"
+  ],
+  "devDependencies": {
+    "polymer": "~0.5.2"
+  }
+}
