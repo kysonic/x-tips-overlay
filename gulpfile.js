@@ -9,53 +9,53 @@ var path  = require('path');
 
 gulp.task('dev', ['stylus','js','jade'], function() { });
 /**
- *  Less task
+ *  Stylus task
  * */
 gulp.task('stylus', function () {
-    gulp.src(['./components/x-tips-overlay/src/*.styl'])
+    gulp.src(['./develop/x-tips-overlay/src/*.styl','./develop/x-tips-overlay/vars.styl'])
         .pipe(stylus())
         .on('error', console.log)
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./components/x-tips-overlay'))
+        .pipe(gulp.dest('./develop/x-tips-overlay'))
 });
 /**
  * Jade task
  */
 gulp.task('jade', function() {
-    gulp.src(['./components/x-tips-overlay/src/*.jade'])
+    gulp.src(['./develop/x-tips-overlay/src/*.jade'])
         .pipe(jade({}))
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./components/x-tips-overlay'))
+        .pipe(gulp.dest('./develop/x-tips-overlay'))
 });
 /**
  * JS Task
  */
 gulp.task('js', function () {
-    gulp.src(['./components/x-tips-overlay/src/*.js'])
+    gulp.src(['./develop/x-tips-overlay/src/*.js'])
         .pipe(uglify())
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./components/x-tips-overlay'));
+        .pipe(gulp.dest('./develop/x-tips-overlay'));
 });
 /**
  *  Watcher
  * */
 gulp.task('watch', function() {
     // Watch less files
-    gulp.watch(['./components/x-tips-overlay/src/*.styl'],[
+    gulp.watch(['./develop/x-tips-overlay/src/*.styl','./develop/x-tips-overlay/vars.styl'],[
         'stylus'
     ]);
     // Watch jade files
-    gulp.watch(['./components/x-tips-overlay/src/*.jade'],[
+    gulp.watch(['./develop/x-tips-overlay/src/*.jade'],[
         'jade'
     ]);
     // Watch js files
-    gulp.watch(['./components/x-tips-overlay/src/*.js'],[
+    gulp.watch(['./develop/x-tips-overlay/src/*.js'],[
         'js'
     ]);
 });

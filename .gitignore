@@ -4,3 +4,7 @@
 .idea/
 ## Node JS
 node_modules/
+components/
+.bowerrc
+bower.json
+

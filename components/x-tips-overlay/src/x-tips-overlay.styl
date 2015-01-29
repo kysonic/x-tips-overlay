@@ -1,2 +1,17 @@
-:host
-  background: #ccc;
+@import 'vars.styl';
+#questionMark
+  position:absolute;
+  width:24px;
+  cursor:pointer;
+  &:hover
+    line
+    path
+    circle
+      stroke: hoverFill;
+  &[qhpos="right"]
+    left: 100%;
+  &[qvpos="bottom"]
+    top: 100%;
+  & line,path,circle
+     stroke: baseFill;
+

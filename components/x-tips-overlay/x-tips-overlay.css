@@ -1,3 +1,21 @@
-:host {
-  background: #ccc;
+#questionMark {
+  position: absolute;
+  width: 24px;
+  cursor: pointer;
+}
+#questionMark:hover line,
+#questionMark:hover path,
+#questionMark:hover circle {
+  stroke: #0d3953;
+}
+#questionMark[qhpos="right"] {
+  left: 100%;
+}
+#questionMark[qvpos="bottom"] {
+  top: 100%;
+}
+#questionMark line,
+#questionMark path,
+#questionMark circle {
+  stroke: #0efff7;
 }

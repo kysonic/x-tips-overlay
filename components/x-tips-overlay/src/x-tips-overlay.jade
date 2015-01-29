@@ -1,5 +1,10 @@
 link(rel="import",href="../polymer/polymer.html")
-polymer-element(name="x-tips-overlay")
+link(rel="import",href="../core-icon/core-icon.html")
+link(rel="import",href="tips-overlay-icons.html")
+polymer-element(name="x-tips-overlay" attributes="qhpos qvpos")
     template
+        core-icon(icon="tips-overlay:question-mark",qhpos="{{qhpos}}",qvpos="{{qvpos}}")#questionMark
+        #overlay(hidden?="{{!opened}}")
+            content(select="x-tip")
         link(rel="stylesheet",href="x-tips-overlay.css")
     script(src="x-tips-overlay.js")

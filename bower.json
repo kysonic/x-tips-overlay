@@ -27,6 +27,8 @@
     "gulpfile.js"
   ],
   "devDependencies": {
-    "polymer": "~0.5.2"
+    "polymer": "~0.5.2",
+    "core-item": "Polymer/core-item#~0.5.2",
+    "core-overlay": "Polymer/core-overlay#~0.5.2"
   }
 }
