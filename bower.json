@@ -29,6 +29,7 @@
   "devDependencies": {
     "polymer": "~0.5.2",
     "core-item": "Polymer/core-item#~0.5.2",
-    "core-overlay": "Polymer/core-overlay#~0.5.2"
+    "core-overlay": "Polymer/core-overlay#~0.5.2",
+    "core-icon": "Polymer/core-icon#~0.5.2"
   }
 }

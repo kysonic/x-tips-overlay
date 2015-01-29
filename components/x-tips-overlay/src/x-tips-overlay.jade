@@ -1,10 +1,138 @@
 link(rel="import",href="../polymer/polymer.html")
 link(rel="import",href="../core-icon/core-icon.html")
+link(rel="import" href="../core-icons/core-icons.html")
 link(rel="import",href="tips-overlay-icons.html")
-polymer-element(name="x-tips-overlay" attributes="qhpos qvpos")
+//
+    ##About component.
+    Component create a tips for elements of your interface.
+    ##Usage
+    ```
+    bower install x-tips-overlay
+    ```
+    Import component to you'r html file.
+    ```
+    <link rel="import" href="/bower_components/x-tips-overlay.html">
+    ```
+    Add:
+    ```
+    // Set position of your question mark button
+    <x-tips-overlay qhpos="right" qvpos="top" control="true"> // Set control panel
+        // Set first tip to .b-button with left offset 65px and top offset 0
+        <x-tip transition="fade" direction="right" selector=".b-button" offsetx="65" offsety="0">
+            // Content of first tip
+            <core-icon id="arrow-left" icon="arrow-back"></core-icon> // arrow pointer
+            <div class="text">Click on button please</div> // Tip text
+            // Navigation
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div> // Element with ok id will be close tip overlay
+            <div class="inline"  id="next"><core-icon icon="chevron-right" title="NEXT TIP" ></core-icon></div> // Element with next id will be open next tip
+        </x-tip>
+        <x-tip transition="scale" id="tip2"  selector="input[type='text']" offsetx="20" offsety="80">
+            <core-icon id="arrow-top" icon="arrow-back"></core-icon>
+            <div class="text">Enter Your Data</div>
+            <div class="inline" id="prev"><core-icon icon="chevron-left" title="PREVIOUS TIP" ></core-icon></div> // Element with prev id will be open previous tip
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
+            <div class="inline"  id="next"><core-icon icon="chevron-right" title="NEXT TIP" ></core-icon></div>
+        </x-tip>
+        <x-tip transition="fade" direction="top" selector="select" offsetx="100" offsety="5">
+            <core-icon id="arrow-left" icon="arrow-back"></core-icon>
+            <div class="text">Select Some</div>
+            <div class="inline" id="prev"><core-icon icon="chevron-left" title="PREVIOUS TIP" ></core-icon></div>
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
+        </x-tip>
+    </x-tips-overlay>
+    ```
+
+    Also... Element in x-tip with active-on\active-off id's will be on\off tips overlay. With this elements you can create  user choosing interface for x-tips-overlay.
+
+
+    You can call tip for his number. x-tips-overlay has callTip method. document.querySelector('x-tips-overlay').callTips(1);
+
+    See example on demo page!
+
+    @element x-tips-overlay
+    @blurb Component create a tips for elements of your interface.
+    @status demo
+    @url https://github.com/kysonic/x-tips-overlay.git
+    @homepage https://github.com/kysonic/x-tips-overlay.git
+    //
+polymer-element(name="x-tips-overlay" attributes="qhpos qvpos control")
     template
-        core-icon(icon="tips-overlay:question-mark",qhpos="{{qhpos}}",qvpos="{{qvpos}}")#questionMark
+        #controlWrapper(qhpos="{{qhpos}}",qvpos="{{qvpos}}")
+            core-icon(icon="tips-overlay:question-mark",on-click="{{toggle}}")#questionMark
+            template(if="{{control}}")
+                #control(hidden?="{{!opened}}")
+                    core-icon(icon="chevron-left",on-click="{{prev}}")#prev
+                    core-icon(icon="chevron-right",on-click="{{next}}")#next
+                    #current {{current+1}}/{{tips.length}}
+                    #active(on-click="{{toggleActive}}")
+                        template(bind,if="{{active}}")
+                            core-icon(icon="check",title="Now tips is enebled")
+                        template(bind,if="{{!active}}")
+                            core-icon(icon="close",title="Now tips is disabled")
         #overlay(hidden?="{{!opened}}")
-            content(select="x-tip")
+            #content
+                content(select="x-tip")
         link(rel="stylesheet",href="x-tips-overlay.css")
-    script(src="x-tips-overlay.js")
+    script(src="x-tips-overlay.js").
+        /**
+          * The 'qhpos' attribute set question mark button horizontal position (left|right)
+          *
+          * @attribute qhpos
+          * @default left
+          * @type String
+          */
+        /**
+          * The 'qvpos' attribute set question mark button vertical position (top|bottom)
+          *
+          * @attribute qvpos
+          * @default top
+          * @type String
+          */
+        /**
+          * The 'control' attribute show\hide a control panel
+          *
+          * @attribute control
+          * @default true
+          * @type Boolean
+          */
+        /**
+           * The 'transition' attribute set transition type to X-TIP (fade|sacle)
+           *
+           * @attribute transition
+           * @default -
+           * @type String
+           */
+        /**
+          * The 'direction' attribute set direction of animation to X-TIP (left|right|bottom|top)
+          *
+          * @attribute direction
+          * @default -
+          * @type String
+          */
+         /**
+          * The 'selector' attribute set selector to be find related dom node for current X-TIP (example '#some-id')
+          *
+          * @attribute selector
+          * @default -
+          * @type String
+          */
+        /**
+           * The 'offsetx' attribute set offset-x of related with X-TIP dom node
+           *
+           * @attribute offsetx
+           * @default 0
+           * @type int
+           */
+         /**
+           * The 'offsety' attribute set offset-y of related with X-TIP dom node
+           *
+           * @attribute offsety
+           * @default 0
+           * @type int
+           */
+        /**
+           * The 'callTip' call tip on number
+           *
+           * @method callTip
+           * @params number (int) - number of called tip
+           */

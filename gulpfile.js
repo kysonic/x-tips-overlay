@@ -12,50 +12,50 @@ gulp.task('dev', ['stylus','js','jade'], function() { });
  *  Stylus task
  * */
 gulp.task('stylus', function () {
-    gulp.src(['./develop/x-tips-overlay/src/*.styl','./develop/x-tips-overlay/vars.styl'])
+    gulp.src(['./components/**/*.styl'])
         .pipe(stylus())
         .on('error', console.log)
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./develop/x-tips-overlay'))
+        .pipe(gulp.dest('./components/'))
 });
 /**
  * Jade task
  */
 gulp.task('jade', function() {
-    gulp.src(['./develop/x-tips-overlay/src/*.jade'])
+    gulp.src(['./components/**/*.jade'])
         .pipe(jade({}))
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./develop/x-tips-overlay'))
+        .pipe(gulp.dest('./components/'))
 });
 /**
  * JS Task
  */
 gulp.task('js', function () {
-    gulp.src(['./develop/x-tips-overlay/src/*.js'])
+    gulp.src(['./components/x-tips-overlay/**/*.js'])
         .pipe(uglify())
         .pipe(rename(function(path){
             path.dirname = path.dirname.replace('src','');
         }))
-        .pipe(gulp.dest('./develop/x-tips-overlay'));
+        .pipe(gulp.dest('./components/x-tips-overlay/'));
 });
 /**
  *  Watcher
  * */
 gulp.task('watch', function() {
     // Watch less files
-    gulp.watch(['./develop/x-tips-overlay/src/*.styl','./develop/x-tips-overlay/vars.styl'],[
+    gulp.watch(['./components/**/*.styl'],[
         'stylus'
     ]);
     // Watch jade files
-    gulp.watch(['./develop/x-tips-overlay/src/*.jade'],[
+    gulp.watch(['./components/**/*.jade'],[
         'jade'
     ]);
     // Watch js files
-    gulp.watch(['./develop/x-tips-overlay/src/*.js'],[
+    gulp.watch(['./components/x-tips-overlay/**/*.js'],[
         'js'
     ]);
 });

@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+    outline: none;
+    background: #efefef;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.text {
+    font-size: 16px !important;
+}
+x-tip{
+    width: 140px;
+    height: 140px;
+}
+x-tip /deep/ #substrate {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(256,256,256,.2);
+    border-radius: 50%;
+    top: -46px;
+    left: -29px;
+}
+x-tip #arrow-left {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -25px;
+}
+x-tip #arrow-top {
+    position: absolute;
+    margin-top: -34px;
+    margin-left: 28px;
+    transform: rotate(90deg);
+}
+#tip2 core-icon path {
+    stroke: #fff;
+    fill: #fff;
+}
+#tip2 .text {
+    color: #fff;
+}
+h2{
+    margin: 5px 0px;
+    color: #689a79;
+}
+hr {
+    width: 200px;
+    border-style: dashed;
+}
+input {
+    width: auto;
+    height: 30px;
+}
+label{
+    color: #5f6161;
+}
+select {
+    width: auto;
+    height: 44px;
+}
+input,select {
+    font-family: "Impact";
+    font-size: 18px;
+    padding: 5px;
+}
+.b-button {
+    font-size: 16px;
+    font-family: 'Impact';
+    font-weight: 100;
+    padding: 14px 10px;
+    background: #8ecca3;
+    color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background .3s ease-out;
+    line-height: 16px;
+    display: inline-block;
+}
+.b-button:hover {
+    background: #cc6065;
+    transition: background .6s ease-out;
+}
+.inline {
+    display: inline-block;
+    cursor: pointer;
+}
+.inline:hover path {
+    fill: #ff53a1;
+    stroke: #ff53a1;
+}
+x-tips-overlay /deep/ #overlay {
+    background: rgba(0,0,0,0.5);
+}

@@ -1,17 +1,71 @@
 @import 'vars.styl';
-#questionMark
+#controlWrapper
+  display:block;
   position:absolute;
-  width:24px;
+  width: 50px;
+  height: 50px;
+  top:10px;
+  left:10px;
+  z-index:3;
+  #control
+    width: 100%;
+    height: 100%;
+  &[qhpos="right"]
+    left: 100%;
+  &[qvpos="bottom"]
+    top: 100%;
+  & #current
+    font: Arial, sans-serif;
+    text-align:center;
+    color: baseFill;
+    font-weight:bold;
+  & #active
+    font: Arial, sans-serif;
+    text-align:center;
+    cursor: pointer;
+    &:hover path
+      fill: hoverFill
+      stroke: hoverFill
+  & #prev,& #next
+    width:50%;
+    height:50%;
+    display: inline-block;
+    cursor:pointer;
+    &:hover
+      line
+      path
+      circle
+        stroke: hoverFill;
+        fill: hoverFill;
+    & line,path,circle
+      stroke: baseFill;
+      fill: baseFill;
+  & #active core-icon
+    stroke: baseFill;
+    fill: baseFill;
+#questionMark
+  width:60%;
+  height: 60%;
+  display: block;
+  margin: 0 auto;
   cursor:pointer;
   &:hover
     line
     path
     circle
       stroke: hoverFill;
-  &[qhpos="right"]
-    left: 100%;
-  &[qvpos="bottom"]
-    top: 100%;
   & line,path,circle
      stroke: baseFill;
+#overlay
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height 100%;
+  z-index:2;
+  background: rgba(0,0,0,0.1);
+  #content
+    position: relative;
+    width: 100%;
+    height 100%;
 
