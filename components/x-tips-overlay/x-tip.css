@@ -1,0 +1,65 @@
+:host {
+  display: block;
+  position: absolute;
+}
+:host([transition="fade"]) {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+:host([transition="scale"]) {
+  transform: scale(0.5, 0.5);
+  opacity: 0;
+  transition: transform 0.2s ease-in;
+}
+:host([direction="right"]) {
+  transform: translateX(50px);
+  transition: transform 0.2s ease-in;
+}
+:host([direction="left"]) {
+  transform: translateX(-50px);
+  transition: transform 0.2s ease-in;
+}
+:host([direction="top"]) {
+  transform: translateY(-50px);
+  transition: transform 0.2s ease-in;
+}
+:host([direction="bottom"]) {
+  transform: translateY(50px);
+  transition: transform 0.2s ease-in;
+}
+:host(.go[transition="fade"]) {
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+}
+:host(.go[transition="scale"]) {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: transform 0.2s ease-in;
+}
+:host(.go[direction="right"]) {
+  transform: translateX(0);
+  transition: transform 0.2s ease-in;
+}
+:host(.go[direction="left"]) {
+  transform: translateX(0);
+  transition: transform 0.2s ease-in;
+}
+:host(.go[direction="top"]) {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in;
+}
+:host(.go[direction="bottom"]) {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in;
+}
+#wrapper {
+  position: absolute;
+  z-index: 3;
+}
+#substrate {
+  position: absolute;
+  z-index: 2;
+}
+polyfill-next-selector {
+  content: ':host > .text';
+}

@@ -1,0 +1,94 @@
+#controlWrapper {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+#controlWrapper #control {
+  width: 100%;
+  height: 100%;
+}
+#controlWrapper[qhpos="right"] {
+  left: 100%;
+}
+#controlWrapper[qvpos="bottom"] {
+  top: 100%;
+}
+#controlWrapper #current {
+  font: Arial, sans-serif;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+#controlWrapper #active {
+  font: Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+#controlWrapper #active:hover path {
+  fill: #ff53a1;
+  stroke: #ff53a1;
+}
+#controlWrapper #prev,
+#controlWrapper #next {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+#controlWrapper #prev:hover line,
+#controlWrapper #next:hover line,
+#controlWrapper #prev:hover path,
+#controlWrapper #next:hover path,
+#controlWrapper #prev:hover circle,
+#controlWrapper #next:hover circle {
+  stroke: #ff53a1;
+  fill: #ff53a1;
+}
+#controlWrapper #prev line,
+#controlWrapper #next line,
+#controlWrapper #prev path,
+#controlWrapper #next path,
+#controlWrapper #prev circle,
+#controlWrapper #next circle {
+  stroke: #000;
+  fill: #000;
+}
+#controlWrapper #active core-icon {
+  stroke: #000;
+  fill: #000;
+}
+#questionMark {
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+#questionMark:hover line,
+#questionMark:hover path,
+#questionMark:hover circle {
+  stroke: #ff53a1;
+}
+#questionMark line,
+#questionMark path,
+#questionMark circle {
+  stroke: #000;
+}
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0,0,0,0.1);
+}
+#overlay #content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

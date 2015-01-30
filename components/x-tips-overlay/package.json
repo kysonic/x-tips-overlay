@@ -1,0 +1,21 @@
+{
+  "name": "x-tips-overlay",
+  "version": "0.0.0",
+  "description": "Polymer automatic tip constructor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Polymer"
+  ],
+  "author": "kysonic",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jade": "^0.10.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-stylus": "^1.3.4",
+    "gulp-uglify": "^1.0.2"
+  }
+}

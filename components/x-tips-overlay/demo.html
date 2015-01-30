@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>KYSONIC | X-TIPS-OVERLAY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <link rel="import" href="x-tips-overlay.html">
+    <link rel="import" href="x-tip.html">
+    <link rel="import" href="components/core-icon/core-icon.html" />
+    <link rel="import" href="components/core-icons/core-icons.html" />
+    <link rel="stylesheet" href="style.css" shim-shadowdom/>
+</head>
+
+<body unresolved>
+    <h1>X-TIPS-OVERLAY</h1>
+    <label for="name">Enter Something</label><br/>
+    <input type="text" name="name" value="" placeholder="Enter Something"/>
+    <div class="b-button" onclick="document.querySelector('x-tips-overlay').callTip(1);"> OK </div>
+    <br/><br/>
+    <label for="name">Select Something</label><br/>
+    <select name="select" id="">
+        <option value="1">ONE</option>
+        <option value="2">TWO</option>
+    </select>
+    <x-tips-overlay qhpos="right" qvpos="top" control="true">
+        <x-tip transition="fade" direction="right" selector=".b-button" offsetx="65" offsety="0">
+            <core-icon id="arrow-left" icon="arrow-back"></core-icon>
+            <div class="text">Click on button please</div>
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
+            <div class="inline"  id="next"><core-icon icon="chevron-right" title="NEXT TIP" ></core-icon></div>
+        </x-tip>
+        <x-tip transition="scale" id="tip2"  selector="input[type='text']" offsetx="20" offsety="80">
+            <core-icon id="arrow-top" icon="arrow-back"></core-icon>
+            <div class="text">Enter Your Data</div>
+            <div class="inline" id="prev"><core-icon icon="chevron-left" title="PREVIOUS TIP" ></core-icon></div>
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
+            <div class="inline"  id="next"><core-icon icon="chevron-right" title="NEXT TIP" ></core-icon></div>
+        </x-tip>
+        <x-tip transition="fade" direction="top" selector="select" offsetx="100" offsety="5">
+            <core-icon id="arrow-left" icon="arrow-back"></core-icon>
+            <div class="text">Select Something</div>
+            <div class="inline" id="prev"><core-icon icon="chevron-left" title="PREVIOUS TIP" ></core-icon></div>
+            <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
+        </x-tip>
+    </x-tips-overlay>
+</body>
+
+</html>

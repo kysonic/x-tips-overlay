@@ -1,0 +1,7 @@
+{
+  "name": "x-tips-overlay#gh-pages",
+  "private": true,
+  "dependencies": {
+    "x-tips-overlay": "kysonic/x-tips-overlay#master"
+  }
+}

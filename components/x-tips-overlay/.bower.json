@@ -1,0 +1,45 @@
+{
+  "name": "x-tips-overlay",
+  "authors": [
+    "kysonic <soooyc@gmail.com>"
+  ],
+  "description": "Polymer tips and advise constructor.",
+  "main": "demo.html",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "Polymer",
+    "tips",
+    "x-tips-overlay"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./components",
+    "test",
+    "tests",
+    "gulpfile.js"
+  ],
+  "devDependencies": {
+    "polymer": "~0.5.2",
+    "core-item": "Polymer/core-item#~0.5.2",
+    "core-overlay": "Polymer/core-overlay#~0.5.2",
+    "core-icon": "Polymer/core-icon#~0.5.2"
+  },
+  "homepage": "https://github.com/kysonic/x-tips-overlay",
+  "_release": "c64aea11b5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c64aea11b565b7e2697f6d117ae1623dc57e7477"
+  },
+  "_source": "git://github.com/kysonic/x-tips-overlay.git",
+  "_target": "master",
+  "_originalSource": "kysonic/x-tips-overlay",
+  "_direct": true
+}
