@@ -9,8 +9,8 @@
 
     <script src="components/webcomponentsjs/webcomponents.min.js"></script>
 
-    <link rel="import" href="components/x-tips-overlay/x-tips-overlay.html">
-    <link rel="import" href="components/x-tips-overlay/x-tip/x-tip.html">
+    <link rel="import" href="x-tips-overlay.html">
+    <link rel="import" href="x-tip.html">
     <link rel="import" href="components/core-icon/core-icon.html" />
     <link rel="import" href="components/core-icons/core-icons.html" />
     <link rel="stylesheet" href="style.css" shim-shadowdom/>
@@ -43,7 +43,7 @@
         </x-tip>
         <x-tip transition="fade" direction="top" selector="select" offsetx="100" offsety="5">
             <core-icon id="arrow-left" icon="arrow-back"></core-icon>
-            <div class="text">Select Some</div>
+            <div class="text">Select Something</div>
             <div class="inline" id="prev"><core-icon icon="chevron-left" title="PREVIOUS TIP" ></core-icon></div>
             <div class="inline" id="ok"><core-icon icon="check" title="OK" ></core-icon></div>
         </x-tip>
